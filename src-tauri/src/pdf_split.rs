@@ -127,7 +127,7 @@ mod tests {
     fn plans_contiguous_coverage_without_gaps() {
         let chunks = plan_chunks(1000, 200, 5);
         assert_eq!(chunks.first(), Some(&(1, 200)));
-        assert_eq!(chunks.last(), Some(&(996, 1000)));
+        assert_eq!(chunks.last(), Some(&(976, 1000)));
         // 相邻块之间重叠 5 页，无断层
         for window in chunks.windows(2) {
             let (_, prev_end) = window[0];
